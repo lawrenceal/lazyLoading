@@ -1,2 +1,2 @@
 # lazyLoading
-图片延时加载
+javascript实现图片延时加载
