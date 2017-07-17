@@ -46,7 +46,8 @@
                 return;
             }
 
-            if(winHeight + scrollTop  >= image.getBoundingClientRect().top){
+            // +200提前加载
+            if(winHeight + scrollTop + 200 >= image.getBoundingClientRect().top){
                 image.src = dataSrc;
                 image.removeAttribute('data-src');
             }
