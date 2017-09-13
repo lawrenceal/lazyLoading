@@ -33,9 +33,11 @@
             winHeight = window.innerHeight,
             scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
 
+
         //offset top
-        console.log(images[7].getBoundingClientRect().top);
-        console.log(getOffsetTop(images[7]));
+        console.log('winHeight: ' + winHeight);
+        console.log("视口top: " + images[7].getBoundingClientRect().top);
+        console.log("offset top: " + getOffsetTop(images[7]));
 
         Array.from(images).forEach((image) => {
 
@@ -46,8 +48,8 @@
                 return;
             }
 
-            // +200提前加载
-            if(winHeight + scrollTop + 200 >= image.getBoundingClientRect().top){
+            // +100提前加载 winHeight + 100>= image.getBoundingClientRect().top
+            if(winHeight + 100 + scrollTop >= getOffsetTop(image)){ // winHeight + 100 + scrollTop <= getOffsetTop(image)
                 image.src = dataSrc;
                 image.removeAttribute('data-src');
             }
