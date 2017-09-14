@@ -3,72 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>js实现延时加载</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-
-        .container{
-            margin: 0 auto;
-            width: 1000px;
-        }
-
-        .container ul{
-            list-style: none;
-        }
-
-        .container ul li{
-            margin-top: 50px
-        }
-
-        .img-center{
-            margin: 0 auto;
-            width: 400px;
-            height: 170px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        img{
-            display: block;
-            position: absolute;
-        }
-
-        .img-center .fill-x{
-            width: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .img-center .fill-y{
-            height: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="container">
         <ul>
-            <li><div class="img-center"><img src="" data-src="https://img20.360buyimg.com/da/jfs/t4213/3/817430913/122531/21428acc/58ba3374N7a04407f.jpg"></div></li>
-            <li><div class="img-center"><img src="" data-src="https://img20.360buyimg.com/da/jfs/t4213/3/817430913/122531/21428acc/58ba3374N7a04407f.jpg"></div></li>
-            <li><div class="img-center"><img src="" data-src="https://img20.360buyimg.com/da/jfs/t4213/3/817430913/122531/21428acc/58ba3374N7a04407f.jpg"></div></li>
-            <li><div class="img-center"><img src="" data-src="https://img20.360buyimg.com/da/jfs/t4213/3/817430913/122531/21428acc/58ba3374N7a04407f.jpg"></div></li>
-            <li><div class="img-center"><img src="" data-src="http://img20.360buyimg.com/da/jfs/t6085/345/4479188727/142750/5d959611/59646c4dN7afde6bd.jpg"></div></li>
-            <li><div class="img-center"><img src="" data-src="https://img1.360buyimg.com/da/jfs/t5653/121/6110503617/190718/f112ae1c/59681798N9bee60f0.jpg"></div></li>
-            <li><div class="img-center"><img src="" data-src="https://img1.360buyimg.com/da/jfs/t6382/234/2580854003/199027/f3e35a97/5964abe8N35a5b12d.jpg"></div></li>
-            <li><div class="img-center"><img src="" data-src="https://img12.360buyimg.com/da/jfs/t6502/295/2149611860/327096/e53702fe/595dd8f1Nb1d55693.jpg"></div></li>
-            <li><div class="img-center"><img src="" data-src="https://img10.360buyimg.com/da/jfs/t6001/160/4695389998/50912/d1045eea/5966d475Nca7070a6.jpg"></div></li>
-            <li><div class="img-center"><img src="" data-src="https://aecpm.alicdn.com/simba/img/TB1W4nPJFXXXXbSXpXXSutbFXXX.jpg"></div></li>
-            <li><div class="img-center"><img src="" data-src="https://img10.360buyimg.com/mobilecms/s200x200_jfs/t277/193/1005339798/768456/29136988/542d0798N19d42ce3.jpg!q90.webp"></div></li>
-            <li><div class="img-center"><img src="" data-src="https://aecpm.alicdn.com/simba/img/TB1W4nPJFXXXXbSXpXXSutbFXXX.jpg"></div></li>
-            <li><div class="img-center"><img src="" data-src="https://img11.360buyimg.com/babel/s386x520_jfs/t6106/97/4985244555/50159/c2993402/596874daNda46d9ef.jpg!q90"></div></li>
-            <li><div class="img-center"><img src="" data-src="https://img12.360buyimg.com/babel/s386x520_jfs/t6070/98/4944918106/45965/945b9754/596874e3Nd9cf99a2.jpg!q90"></div></li>
-            <li><div class="img-center"><img src="" data-src="http://img20.360buyimg.com/da/jfs/t6085/345/4479188727/142750/5d959611/59646c4dN7afde6bd.jpg"></div></li>
+            <li><div class="img-center "><img class="l-lazyload" data-src="https://img20.360buyimg.com/da/jfs/t4213/3/817430913/122531/21428acc/58ba3374N7a04407f.jpg"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="https://img20.360buyimg.com/da/jfs/t4213/3/817430913/122531/21428acc/58ba3374N7a04407f.jpg"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="https://img20.360buyimg.com/da/jfs/t4213/3/817430913/122531/21428acc/58ba3374N7a04407f.jpg"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="https://img20.360buyimg.com/da/jfs/t4213/3/817430913/122531/21428acc/58ba3374N7a04407f.jpg"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="http://img20.360buyimg.com/da/jfs/t6085/345/4479188727/142750/5d959611/59646c4dN7afde6bd.jpg"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="https://img1.360buyimg.com/da/jfs/t5653/121/6110503617/190718/f112ae1c/59681798N9bee60f0.jpg"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="https://img1.360buyimg.com/da/jfs/t6382/234/2580854003/199027/f3e35a97/5964abe8N35a5b12d.jpg"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="https://img12.360buyimg.com/da/jfs/t6502/295/2149611860/327096/e53702fe/595dd8f1Nb1d55693.jpg"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="https://img10.360buyimg.com/da/jfs/t6001/160/4695389998/50912/d1045eea/5966d475Nca7070a6.jpg"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="https://aecpm.alicdn.com/simba/img/TB1W4nPJFXXXXbSXpXXSutbFXXX.jpg"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="https://img10.360buyimg.com/mobilecms/s200x200_jfs/t277/193/1005339798/768456/29136988/542d0798N19d42ce3.jpg!q90.webp"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="https://aecpm.alicdn.com/simba/img/TB1W4nPJFXXXXbSXpXXSutbFXXX.jpg"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="https://img11.360buyimg.com/babel/s386x520_jfs/t6106/97/4985244555/50159/c2993402/596874daNda46d9ef.jpg!q90"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="https://img12.360buyimg.com/babel/s386x520_jfs/t6070/98/4944918106/45965/945b9754/596874e3Nd9cf99a2.jpg!q90"></div></li>
+            <li><div class="img-center"><img class="l-lazyload" data-src="http://img20.360buyimg.com/da/jfs/t6085/345/4479188727/142750/5d959611/59646c4dN7afde6bd.jpg"></div></li>
         </ul>
     </div>
 <script src="index.js"></script>
+<script>
+    new ImageLazyLoad('.l-lazyload', {time: 200, offset: 0});
+</script>
 </body>
 </html>

@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.container ul{
+    list-style: none;
+}
+
+.container ul li{
+    margin-top: 50px
+}
+
+.img-center{
+    margin: 0 auto;
+    width: 400px;
+    height: 170px;
+    overflow: hidden;
+    position: relative;
+}
+
+img{
+    display: block;
+    position: absolute;
+}
+
+.img-center .fill-x{
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.img-center .fill-y{
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
