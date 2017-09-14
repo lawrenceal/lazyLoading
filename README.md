@@ -1,2 +1,2 @@
 # lazyLoading
-javascript实现图片延时加载 图片居中
+javascript(es6) 图片延时加载 图片自适应居中
